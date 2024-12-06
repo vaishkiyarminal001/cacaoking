@@ -4,17 +4,20 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import i1 from '../Assets/i1.png';
-import i2 from '../Assets/i2.png';
+import i6 from '../Assets/i6.webp';
+import i2 from '../Assets/i2.jpg';
 import i3 from '../Assets/i3.jpg';
 import i4 from '../Assets/i4.jpg';
-import { Button86 } from './Button86';
+import i5 from '../Assets/i5.jpg';
+
 
 // Product details with updated descriptions, benefits, and how to use
 const servicesData = [
   {
     id: 1,
-    title: "Coffee Scrub",
-    image: i1,
+    title: "NEW 2-in-1 Exfoliating & Rejuvenating Coffee Scrub for Smooth, Glowing Skin",
+    image: i3,
+    image2: i4,
     description: "Our Coffee Scrub is crafted with natural coffee grounds, rich in antioxidants to exfoliate and rejuvenate your skin. It removes dead skin cells and promotes circulation, leaving your skin smooth and glowing.",
     benefits: [
       "Exfoliates dead skin cells",
@@ -31,80 +34,9 @@ const servicesData = [
   },
   {
     id: 2,
-    title: "Glowing Oil",
-    image: i2,
-    description: "Our Glowing Oil is a nourishing blend of natural oils that deeply hydrate your skin, leaving it soft, smooth, and radiant. The formula is lightweight and non-greasy, perfect for a luminous glow.",
-    benefits: [
-      "Deeply hydrates and moisturizes skin",
-      "Enhances skin's natural radiance",
-      "Non-greasy formula for a soft finish",
-      "Improves skin texture and elasticity"
-    ],
-    howToUse: "Apply a few drops of the oil onto your skin after showering, massaging it gently in circular motions. Can be used on the face, body, and hair for ultimate glow.",
-    salePrice: 800,
-    regularPrice: 1050,
-    discount: 24,
-    rating: 4.8,
-    reviews: 102,
-  },
-  {
-    id: 3,
-    title: "Hair Serum",
-    image: i3,
-    description: "Our Hair Serum is a lightweight formula that nourishes and strengthens hair, providing a smooth, frizz-free finish. It helps to protect against heat damage and promotes healthy hair growth.",
-    benefits: [
-      "Reduces frizz and flyaways",
-      "Protects hair from heat damage",
-      "Nourishes and strengthens hair",
-      "Promotes healthy hair growth"
-    ],
-    howToUse: "Apply a small amount of serum to damp hair, focusing on the ends. Style as desired. For added shine and smoothness, use on dry hair as well.",
-    salePrice: 450,
-    regularPrice: 600,
-    discount: 25,
-    rating: 4.7,
-    reviews: 98,
-  },
-  {
-    id: 4,
-    title: "Aromatic",
-    image: i4,
-    description: "Aromatic is a luxurious fragrance oil that uplifts the senses with a blend of calming and refreshing scents. Perfect for aromatherapy, it helps relieve stress and promote relaxation.",
-    benefits: [
-      "Calming and refreshing aroma",
-      "Relieves stress and promotes relaxation",
-      "Improves mood and mental clarity",
-      "Ideal for aromatherapy and relaxation"
-    ],
-    howToUse: "Place a few drops in a diffuser to enjoy the soothing scent, or apply to pulse points for a calming effect throughout the day.",
-    salePrice: 650,
-    regularPrice: 850,
-    discount: 23,
-    rating: 4.9,
-    reviews: 110,
-  },
-  {
-    id: 1,
-    title: "Coffee Scrub",
+    title: "NEW 2-in-1 Nourishing & Radiant Glowing Hair Oil for Soft, Shiny Hair",
     image: i1,
-    description: "Our Coffee Scrub is crafted with natural coffee grounds, rich in antioxidants to exfoliate and rejuvenate your skin. It removes dead skin cells and promotes circulation, leaving your skin smooth and glowing.",
-    benefits: [
-      "Exfoliates dead skin cells",
-      "Improves blood circulation",
-      "Helps reduce the appearance of cellulite",
-      "Rich in antioxidants for youthful skin"
-    ],
-    howToUse: "Gently massage the scrub onto damp skin in circular motions for 2-3 minutes. Rinse thoroughly with warm water. Use 2-3 times a week for best results.",
-    salePrice: 731,
-    regularPrice: 975,
-    discount: 25,
-    rating: 4.9,
-    reviews: 111,
-  },
-  {
-    id: 2,
-    title: "Glowing Oil",
-    image: i2,
+    image2: i5,
     description: "Our Glowing Oil is a nourishing blend of natural oils that deeply hydrate your skin, leaving it soft, smooth, and radiant. The formula is lightweight and non-greasy, perfect for a luminous glow.",
     benefits: [
       "Deeply hydrates and moisturizes skin",
@@ -121,8 +53,9 @@ const servicesData = [
   },
   {
     id: 3,
-    title: "Hair Serum",
-    image: i3,
+    title: "Nourishing & Smoothing Hair Serum for Frizz-Free, Healthy Hair",
+    image: i6,
+    image2: i3,
     description: "Our Hair Serum is a lightweight formula that nourishes and strengthens hair, providing a smooth, frizz-free finish. It helps to protect against heat damage and promotes healthy hair growth.",
     benefits: [
       "Reduces frizz and flyaways",
@@ -139,8 +72,9 @@ const servicesData = [
   },
   {
     id: 4,
-    title: "Aromatic",
-    image: i4,
+    title: "NEW 2-in-1 Calming & Refreshing Aromatic Oil for Relaxation & Uplifted Mood",
+    image: i2,
+    image2: i4,
     description: "Aromatic is a luxurious fragrance oil that uplifts the senses with a blend of calming and refreshing scents. Perfect for aromatherapy, it helps relieve stress and promote relaxation.",
     benefits: [
       "Calming and refreshing aroma",
@@ -193,9 +127,21 @@ export const Product = () => {
 
       {/* Services Section */}
       <div className="svc-list">
-        {servicesData.map((service) => (
+      {servicesData.map((service) => (
           <div className="svc-card" key={service.id}>
-            <img src={service.image} alt={service.title} className="svc-img" />
+            <div className="svc-img-wrapper">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="svc-img"
+                style={{ display: 'block' }}
+              />
+              <img
+                src={service.image2}
+                alt={`${service.title} Hover`}
+                className="svc-img-hover"
+              />
+            </div>
             <h3>{service.title}</h3>
             <div className="price-details">
               <span className="sale-price">₹{service.salePrice}</span>
@@ -203,15 +149,22 @@ export const Product = () => {
               <span className="discount">({service.discount}% OFF)</span>
             </div>
 
-            {/* Rating and Reviews on the card */}
             <div className="product-rating">
-              <span>{service.rating} ⭐</span>
+              <span>{service.rating} ⭐⭐⭐⭐⭐</span>
               <span>{service.reviews} Reviews</span>
             </div>
 
-            <div className="button-86" role="button" onClick={() => openPopup(service)}>
+
+
+            {/* button-87 */}
+            <div className="button-87" role="button" onClick={() => openPopup(service)}>
               Read More
             </div>
+
+
+
+
+
           </div>
         ))}
       </div>
@@ -251,7 +204,12 @@ export const Product = () => {
             </div>
 
             {/* Add to Cart Button */}
-            <button className="add-to-cart-btn" onClick={addToCart}>Add to Cart</button>
+            {/* <button className="add-to-cart-btn" onClick={addToCart}>Add to Cart</button> */}
+
+            <div className="button-89" role="button" onClick={addToCart}>
+            Add to Cart
+            </div>
+
           </div>
         </div>
               

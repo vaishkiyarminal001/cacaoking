@@ -1,132 +1,147 @@
 /* Navbar Container */
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px;
-    background: black;
-    /* box-shadow: 4px 4px 8px #0a0a0a, -4px -4px 8px #303030; */
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  /* Logo Image Styling */
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px; /* Increased height for the logo container */
-    width: auto;
-  }
-  
-  .logo-image {
-    height: 80px; 
-    width: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    /* border: 1px solid red; */
-  }
-  
-  /* Navbar Links */
-  .navbar-links {
-    display: flex;
-    gap: 20px;
-    transition: all 0.4s ease;
-  }
-  
-  .navbar-links a {
-    color: white; /* White text */
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 8px 15px;
-    border-radius: 8px;
-    /* text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4;  */
-    text-shadow: 0 0 5px #304c6b, 0 0 15px #0A0F1F, 0 0 25px #FFFFFF;
-    background-color: transparent; /* Transparent background */
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .navbar-links a:hover {
-    color: white; /* Keep the text white */
-    background-color: #e39b61; 
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px #e39b61, 0 0 20px #e39b61;
-  }
-  
-  /* Hamburger Menu */
-  .hamburger {
-    display: none;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  background: white; /* Navbar background */
+  color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo Image Styling */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; 
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo-image {
+  height: 80px; 
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  transition: all 0.4s ease;
+}
+
+.navbar-links a {
+  position: relative;
+  color: black;
+  text-decoration: none; 
+  font-size: 1em;
+  padding: 8px 15px; 
+  border-radius: 8px;
+  background-color: transparent; 
+  transition: color 0.3s ease-in-out; 
+}
+
+.navbar-links a:hover {
+  color: rgba(32, 31, 31, 0.879); 
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0; 
+  height: 2px; 
+  background-color: black;
+  transition: width 0.3s ease-in-out; 
+}
+
+.navbar-links a:hover::after {
+  width: 90%; 
+}
+
+/* Hamburger Menu */
+.hamburger {
+display: none;
+cursor: pointer;
+flex-direction: column;
+gap: 6px;
+color: black; 
+transition: all 0.3s ease;
+}
+
+.hamburger .bar {
+width: 30px;
+height: 3px;
+background-color: black; 
+border-radius: 5px;
+transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.navbar-links {
+    position: absolute;
+    top: 80px; 
+    right: 0;
+    background: white; 
+    color: black; 
+    width: 100%;
     flex-direction: column;
-    gap: 6px;
-    transition: all 0.3s ease;
-  }
-  
-  .hamburger .bar {
-    width: 30px;
-    height: 3px;
-    background-color: white; /* White bars for hamburger */
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 8px white, 0 0 12px white;
-  }
-  
-  .hamburger:hover .bar {
-    background-color: #e39b61; /* Dark Purple on hover */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar-links {
-      position: absolute;
-      top: 80px; /* Adjusted for larger navbar height */
-      right: 0;
-      background: #1A1A1A; /* Dark background for the dropdown */
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-    }
-  
-    .navbar-links.open {
-      max-height: 400px;
-      padding: 10px 0;
-    }
-  
-    .hamburger {
-      display: flex;
-    }
-  
-    .navbar-links a {
-      font-size: 1.2em;
-      padding: 12px;
-      width: 100%;
-      text-align: center;
-    }
-  
-    .navbar-links a:hover {
-      background-color: #e39b61; /* Dark Purple on hover */
-      color: white; /* Text color remains white */
-    }
-  }
-  
-  /* Animation for Hamburger Icon */
-  .hamburger.open .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .hamburger.open .bar:nth-child(2) {
+    align-items: center;
+    gap: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.navbar-links.open {
+    max-height: 400px;
+    padding: 10px 0;
+}
+
+.hamburger {
+    display: flex;
+}
+
+.navbar-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.navbar.hide-logo .navbar-logo {
     opacity: 0;
-  }
-  
-  .hamburger.open .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  
-  
+}
+
+.navbar-links a {
+    font-size: 1.2em;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    color: black; 
+}
+
+.navbar-links a:hover {
+    color: white; 
+}
+}
+
+/* Animation for Hamburger Icon */
+.hamburger.open .bar:nth-child(1) {
+transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+transform: translateY(-8px) rotate(-45deg);
+}

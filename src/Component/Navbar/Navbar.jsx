@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import logo from '../Assets/logo.jpg'; // Corrected import statement
+import logo from '../Assets/logo.jpg';
 import { NavLink } from 'react-router-dom'; // Using NavLink for active class support
 
 export const Navbar = () => {

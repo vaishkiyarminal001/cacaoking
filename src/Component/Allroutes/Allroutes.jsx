@@ -7,6 +7,7 @@ import { Contact } from '../Pages/Contact'
 import { Error } from '../Pages/Error'
 import { Cart } from '../Pages/Cart'
 import Training from '../Pages/Training'
+import { Dummy } from '../Pages/Dummy'
 
 
 
@@ -20,6 +21,7 @@ export const Allrout = () => {
       <Route path='/training' element={<Training/>}/>
       <Route path='/contact' element={<Contact/>} />
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/dummy' element={<Dummy/>} />
       <Route path='*' element={<Error/>} />
 
       {/* <Route path='/footer' element={<Footer/>} /> */}

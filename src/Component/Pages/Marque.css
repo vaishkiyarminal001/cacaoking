@@ -1,22 +1,25 @@
-.marque-main{
-    margin: auto;
-    margin-top: 3px;
-    height: 30px;
-    width: 100%;
-    background-color: black;
-    /* border: 1px solid red; */
-    
-    
+.marque-main {
+  margin: auto;
+  height: 30px;
+  width: 100%;
+  background-color: #d9bea0;
+  position: sticky;
+  top: 0; 
+  z-index: 1000; 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
 }
+
 .marquee-text {
     font-size: 16px; 
-    color: white;
+    color: black;
     text-align: center;
     margin-top: -10px;
   }
   
   .highlight {
-    color: #d2691e; 
+    color: white;
+    font-weight: bold; 
+    padding-right: 5px;
   }
 
 
@@ -28,8 +31,8 @@
         height: 30px;
         width: 90%;
         background-color: black;
-        /* border: 1px solid red; */
     }
+
     .marquee-text {
         font-size: 16px; 
         color: white;
@@ -50,8 +53,8 @@
         height: 30px;
         width: 99%;
         background-color: black;
-        /* border: 1px solid red; */
     }
+    
     .marquee-text {
         font-size: 16px; 
         color: white;

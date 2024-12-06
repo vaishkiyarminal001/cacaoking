@@ -8,8 +8,9 @@ import WhatsAppChat from './Component/Pages/WhatsAppChat';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
       <Marque/>
+      <Navbar/>
+      
       <Allrout/>
       <TawkToChat/>
       <WhatsAppChat/>
